@@ -1,0 +1,1 @@
+require 'ffcrm_freshbooks/engine' if defined?(Rails)
