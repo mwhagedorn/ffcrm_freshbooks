@@ -37,7 +37,9 @@ class CallbackHooks < FatFreeCRM::Callback::Base
     #id => Lead
     #Lead->contact->account
     @lead = Lead.find(params[:id])
-    #redirect_to ffcrm_freshbooks_path(@lead)
+
+    @gateway =FfcrmFreshBooks::FreshbooksGateway.new
+    @gateway.create_contact(@lead)
 
 
   end
